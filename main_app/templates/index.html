@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +14,12 @@
     {% if widgets|length == 0 %}
         <h3>No Widgets Exist</h3>
     {% else %}
-        <table>
-            <tr>
+        <table class="pure-table" class="pure-table-striped">
+            <thead>
               <th>Description</th>
               <th>Quantity</th>
               <th>Delete</th>
-            </tr>
+            </thead>
         {% for widget in widgets %}
             <tr>
               <td>{{widget.description}}</td>
@@ -29,7 +30,7 @@
         </table>
     {% endif %}
     <hr>
-    <a href="{% url 'add_widget' %}">Add a Widget</a>
+    <h4><a href="{% url 'add_widget' %}">Add a Widget</a></h4>
 </body>
 </html>
 
